@@ -11,13 +11,15 @@ export default class App extends React.Component {
     const { isLoading } = this.state;
     return (
       <View style={styles.container}>
-        {isLoading ? (
+        {/* {isLoading ? (
           <Text>Fetching The Weather</Text>
         ) : (
           <View>
             <Text>Minimalist Weather App</Text>
           </View>
-        )}
+        )} */}
+
+        <Weather />
       </View>
     );
   }
@@ -27,7 +29,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });

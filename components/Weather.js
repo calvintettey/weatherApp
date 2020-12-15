@@ -5,29 +5,37 @@ import PropTypes from "prop-types";
 import { weatherConditions } from "../utils/WeatherConditions";
 
 const Weather = ({ weather, temperature }) => {
-  return (
-    <View
-      style={[
-        styles.weatherContainer,
-        { backgroundColor: weatherConditions[weather].color },
-      ]}
-    >
-      <View style={styles.headerContainer}>
-        <MaterialCommunityIcons
-          size={72}
-          name={weatherConditions[weather].icon}
-          color={"#fff"}
-        />
-        <Text style={styles.tempText}>{temperature}˚</Text>
+  if (weather != null) {
+    return (
+      <View
+        style={[
+          styles.weatherContainer,
+          { backgroundColor: weatherConditions[weather].color },
+        ]}
+      >
+        <View style={styles.headerContainer}>
+          <MaterialCommunityIcons
+            size={72}
+            name={weatherConditions[weather].icon}
+            color={"#fff"}
+          />
+          <Text style={styles.tempText}>{temperature}˚</Text>
+        </View>
+        <View style={styles.bodyContainer}>
+          <Text style={styles.title}>{weatherConditions[weather].title}</Text>
+          <Text style={styles.subtitle}>
+            {weatherConditions[weather].subtitle}
+          </Text>
+        </View>
       </View>
-      <View style={styles.bodyContainer}>
-        <Text style={styles.title}>{weatherConditions[weather].title}</Text>
-        <Text style={styles.subtitle}>
-          {weatherConditions[weather].subtitle}
-        </Text>
+    );
+  } else {
+    return (
+      <View style={styles.loadingContainer}>
+        <Text style={styles.loadingText}>Oh no, something went wrong :(</Text>
       </View>
-    </View>
-  );
+    );
+  }
 };
 
 Weather.propTypes = {
@@ -41,7 +49,7 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     flex: 1,
-    flexDirection:"row",
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
   },
@@ -64,6 +72,16 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: "#fff",
   },
+
+  loadingContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#FFFDE4",
+  },
+  loadingText: {
+    fontSize: 30,
+  }
 });
 
 export default Weather;

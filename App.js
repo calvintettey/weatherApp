@@ -7,10 +7,8 @@ import {
   StyleSheet,
   Image,
   ImageBackground,
-  StatusBar,
   TouchableOpacity,
   TextInput,
-  ActivityIndicator,
 } from "react-native";
 
 const Sc_Height = Dimensions.get("screen").height;
@@ -66,19 +64,15 @@ export default class App extends React.Component {
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        <StatusBar translucent={true} backgroundColor="#000" />
         <ImageBackground
-          source={{
-            uri:
-              "https://cdn.dribbble.com/users/648922/screenshots/11206395/media/5998f56329eda70b71fecd050032bc21.png",
-          }}
+          source={require("./assets/bkgimage2.jpg")}
           style={styles.imageBackground}
         >
           <View style={styles.searchBarView}>
             <TextInput
               placeholder="Search"
               placeholderTextColor="#FFF"
-              style={styles. searchBar}
+              style={styles.searchBar}
               onChangeText={(text) => this.setState({ city: text })}
             />
             <TouchableOpacity
@@ -144,10 +138,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
+    paddingHorizontal: 15,
   },
   searchBar: {
     height: "30%",
-    width: "87%",
+    width: "85%",
     borderColor: "#FFF",
     borderWidth: 1,
     borderRadius: 15,
@@ -200,7 +195,7 @@ const styles = StyleSheet.create({
   infoHolderView: {
     height: "80%",
     width: "90%",
-    backgroundColor: "rgba(255, 255, 255, 0.92)",
+    backgroundColor: "rgba(255, 255, 255, 0.62)",
     borderRadius: 15,
   },
   mainWeatherText: {

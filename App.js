@@ -14,6 +14,14 @@ import {
 const Sc_Height = Dimensions.get("screen").height;
 const Sc_Width = Dimensions.get("screen").width;
 
+// const [loaded] = useFonts({
+//   Montserrat: require('./assets/fonts/Montserrat.ttf'),
+// });
+
+// if (!loaded) {
+//   return null;
+// }
+
 import Icon from "react-native-vector-icons/AntDesign";
 
 export default class App extends React.Component {
@@ -60,6 +68,8 @@ export default class App extends React.Component {
         this.setState({ isLoading: false });
       });
   };
+
+  
 
   render() {
     return (
@@ -138,10 +148,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
-    paddingHorizontal: 15,
+    paddingHorizontal: 17,
   },
   searchBar: {
-    height: "30%",
+    height: "28%",
     width: "85%",
     borderColor: "#FFF",
     borderWidth: 1,
@@ -202,25 +212,30 @@ const styles = StyleSheet.create({
     fontSize: 28,
     color: "#464646",
     marginLeft: "8%",
-    marginTop: "8%",
-    fontWeight: "bold",
+    marginTop: "10%",
+    // fontWeight: "bold",
+    fontFamily: "sans-serif-light",
+
   },
   descriptionText: {
-    fontSize: 20,
-    color: "#121212",
-    marginLeft: "8%",
-    marginTop: "3%",
-  },
-  humidityText: {
-    fontSize: 18,
-    color: "#121212",
+    fontSize: 25,
+    color: "#464647",
     marginLeft: "8%",
     marginTop: "5%",
+    fontFamily: "sans-serif-medium",
+  },
+  humidityText: {
+    fontSize: 15,
+    color: "#464647",
+    marginLeft: "8%",
+    marginTop: "10%",
+    fontFamily: "sans-serif-medium",
   },
   otherText: {
-    fontSize: 18,
-    color: "#121212",
+    fontSize: 15,
+    color: "#464647",
     marginLeft: "8%",
-    marginTop: "2%",
+    marginTop: "4%",
+    fontFamily: "sans-serif-medium",
   },
 });

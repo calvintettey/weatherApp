@@ -23,4 +23,4 @@
 
 ## Acknowledgements
 
-* Thanks to anyone on the internet whose code helped make this project possible! ☺
+* Thanks to anyone who helped make this project possible! ☺
